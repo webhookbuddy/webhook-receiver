@@ -2,9 +2,18 @@ const express = require('express');
 const url = require('url');
 const bodyParser = require('body-parser');
 let morgan = require('morgan');
+const cors = require("cors");
+
+
+
+let corsOptions = {
+  origin: "*",
+};
 
 const app = express();
 const port = 8080;
+
+app.use(cors());
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -22,6 +31,10 @@ app.post('/', (req, res) => {
         }, delay_ms);
     }
 });
+
+app.get("/", (req, res) => {
+    res.send("test");
+  });
 
 app.listen(port, () => {
     console.log(`Running a API server at http://localhost:${port}/`);
