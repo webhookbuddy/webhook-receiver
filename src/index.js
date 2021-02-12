@@ -11,21 +11,16 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(morgan("dev"))
 
 
-app.get('/webhooks', (req, res) => {
-    console.log("Got body:", req.body);
-    let statusCode = parseInt(req.query.statuscode);
-    const delay_ms = parseInt(req.query.delay);
-
-    if (statusCode === undefined) {
-        statusCode = 200;
-    }
+app.post('/', (req, res) => {
+    // console.log("Got body:", req.body);
+    let statusCode = parseInt(req.query.statuscode) || 200;
+    const delay_ms = parseInt(req.query.delay) || 0;
     
     if (delay_ms !== undefined) {
         setTimeout(() => {
-            res.status(statusCode).send("Hello");
+            res.status(statusCode).json({ msg: "hello" });
         }, delay_ms);
     }
-
 });
 
 app.listen(port, () => {
