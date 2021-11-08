@@ -1,17 +1,21 @@
-# whb-forwarding
-A node script to receive forwarded webhooks from Webhook Buddy Client. Added delay feature to test performance of UI on Client
+# Webhook Receiver
+
+A node script to receive forwarded webhooks from Webhook Buddy Client.
 
 ## Setup
+
 ```
-git clone git@github.com:webhook-buddies/webhook-buddy-test.git
-cd <cloned-repo-name>
-npm install
+git clone https://github.com/webhookbuddy/webhook-receiver.git
+cd webhook-receiver
+npm ci
 ```
 
-## Execute node server locally
+## Run
+
 `npm start`
 
 ## Features
-- configurable delay in receiving webhooks by changing Forwarded Url Endpoint on the WBH Client
+
+- configurable delay in receiving webhooks by changing Forwarded Url Endpoint on the Webhook Buddy Client
 - default: `http://localhost:8080/`
-- delay  : `http://localhost:8080/?delay=2000`
+- delay : `http://localhost:8080/?delay=2000`
