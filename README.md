@@ -17,5 +17,5 @@ npm ci
 ## Features
 
 - configurable delay in receiving webhooks by changing Forwarded Url Endpoint on the Webhook Buddy Client
-- default: `http://localhost:8080/`
-- delay : `http://localhost:8080/?delay=2000`
+- default: `http://localhost:8020/`
+- delay : `http://localhost:8020/?delay=2000`
